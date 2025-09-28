@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Server Page</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 20px;
+      }
+      input,
+      button {
+        margin: 5px 0;
+        padding: 6px;
+      }
+      pre {
+        background: #f0f0f0;
+        padding: 10px;
+        white-space: pre-wrap;
+      }
+
+      #cnvs {
+        display: block;
+        width: 90vw;
+        height: 70vh;
+        background: #000000;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Server Interface</h2>
+    <input id="msg" placeholder="Send to client" />
+    <button onclick="send()">Send</button>
+    <pre id="log">Waiting...</pre>
+
+    <canvas id="cnvs"></canvas>
+
+    <!-- Include the compiled JavaScript -->
+    <script type="module" src="/js/server/aim.js"></script>
+
+    <script>
+      const ws = new WebSocket('wss://' + location.host);
+      const log = document.getElementById('log');
+
+      ws.onopen = () => {
+        ws.send(JSON.stringify({ type: 'register', role: 'server' }));
+        log.textContent += '\nWebSocket connected';
+      };
+
+      ws.onmessage = (e) => {
+        log.textContent = `\n${e.data}`;
+
+        const event = new CustomEvent('movement', {
+          detail: e.data,
+        });
+
+        window.dispatchEvent(event);
+      };
+
+      function send() {
+        const msg = document.getElementById('msg').value;
+        if (msg.trim()) {
+          ws.send(
+            JSON.stringify({ type: 'message', target: 'client', message: msg })
+          );
+        }
+      }
+    </script>
+  </body>
+</html>

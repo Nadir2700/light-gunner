@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "outDir": "public/js",
+    "rootDir": "src/public",
+    "strict": true
+  },
+  "include": ["src/public/**/*.ts"]
+}

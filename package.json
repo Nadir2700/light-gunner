@@ -1,0 +1,25 @@
+{
+  "name": "lightgunner",
+  "version": "0.0.1",
+  "description": "proof of concept light gin imitation",
+  "main": "dist/server.js",
+  "author": "Vadim F.",
+  "license": "NONE",
+  "dependencies": {
+    "ws": "^8.13.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.4.2",
+    "@types/ws": "^8.5.4",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.4.0"
+  },
+  "scripts": {
+    "build:server": "tsc --project tsconfig.serverside.json",
+    "build:client": "tsc --project tsconfig.public.json",
+    "build": "npm run build:server && npm run build:client",
+    "watch:client": "tsc --project tsconfig.public.json --watch",
+    "dev": "ts-node --project tsconfig.serverside.json src/serverside/server.ts",
+    "start": "node dist/server.js"
+  }
+}

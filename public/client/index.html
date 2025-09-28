@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Client Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 20px;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
+      }
+      input,
+      button {
+        margin: 5px 0;
+        padding: 6px;
+      }
+      pre {
+        background: #f0f0f0;
+        padding: 10px;
+        white-space: pre-wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Client Interface</h2>
+    <input id="msg" placeholder="Send to server" />
+    <button onclick="send()">Send</button>
+    <button onclick="requestOrientationPermission()">Enable Orientation</button>
+    <pre id="log">Waiting...</pre>
+
+    <script>
+      const ws = new WebSocket('wss://' + location.host);
+      const log = document.getElementById('log');
+
+      ws.onopen = () => {
+        ws.send(JSON.stringify({ type: 'register', role: 'client' }));
+        log.textContent += '\nWebSocket connected';
+      };
+
+      ws.onmessage = (e) => (log.textContent += `\n${e.data}`);
+
+      function send() {
+        const msg = document.getElementById('msg').value;
+        if (msg.trim()) {
+          ws.send(
+            JSON.stringify({ type: 'message', target: 'server', message: msg })
+          );
+        }
+      }
+
+      function requestOrientationPermission() {
+        if (
+          typeof DeviceOrientationEvent !== 'undefined' &&
+          typeof DeviceOrientationEvent.requestPermission === 'function'
+        ) {
+          DeviceOrientationEvent.requestPermission()
+            .then((state) => {
+              if (state === 'granted') {
+                window.addEventListener('deviceorientation', handleOrientation);
+                log.textContent += '\nPermission granted';
+              } else {
+                log.textContent += '\nPermission denied';
+              }
+            })
+            .catch((err) => {
+              log.textContent += '\nPermission error: ' + err;
+            });
+        } else {
+          window.addEventListener('deviceorientation', handleOrientation);
+          log.textContent += '\nOrientation enabled without prompt';
+        }
+      }
+
+      function handleOrientation(event) {
+        const alpha = event.alpha?.toFixed(1);
+        const beta = event.beta?.toFixed(1);
+        const gamma = event.gamma?.toFixed(1);
+
+        const orientationMsg = `x: ${alpha} y: ${beta} roll: ${gamma}`;
+        log.textContent = orientationMsg;
+
+        ws.send(
+          JSON.stringify({
+            type: 'message',
+            target: 'server',
+            message: `x: ${alpha} y: ${beta} roll: ${gamma}`,
+          })
+        );
+      }
+
+      window.addEventListener('load', () => requestOrientationPermission());
+    </script>
+  </body>
+</html>
