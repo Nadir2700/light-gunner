@@ -32,7 +32,7 @@ Only a modern mobile browser is needed.
    cd lightgunner
    ```
 
-2. **Install dependencies** (The example uses [Bun](https://bun.sh)), but it should also work with Node or Deno.)
+2. **Install dependencies** (The example uses [Bun](https://bun.sh), but it should also work with Node or Deno.)
    ```bash
    bun install
    ```
