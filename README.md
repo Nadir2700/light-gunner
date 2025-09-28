@@ -3,13 +3,12 @@
 **Lightgunner** is a proof of concept that turns a smartphone into a lightgun with **no extra apps** required.  
 Only a modern mobile browser is needed.
 
----
 
 ## Preview
 
 ![Demo Preview](https://raw.githubusercontent.com/vadimcx/lightgunner/refs/heads/main/msc/imgs/lightgunner1.gif)
 
----
+
 
 ## How It Works
 
@@ -20,7 +19,7 @@ Only a modern mobile browser is needed.
 - Host and client communicate over **Wi-Fi** via **WebSockets**.
 - The **DeviceOrientation API** maps phone motion to the on-screen crosshair in real time.
 
----
+
 
 ## Usage
 
@@ -55,7 +54,7 @@ Only a modern mobile browser is needed.
 6. **Calibrate the crosshair**
    - On the host page, **left-click** to reposition the crosshair and adjust alignment.
 
----
+
 
 ## Notes
 
@@ -63,7 +62,7 @@ Only a modern mobile browser is needed.
 - Both host and client must be on the **same Wi-Fi network**.
 - Designed and tested with **Bun**; other Node.js runtimes should work with minor adjustments.
 
----
+
 
 ## Disclaimer
 
