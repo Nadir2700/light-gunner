@@ -1,6 +1,6 @@
-# Lightgunner
+# ligh-tgunner
 
-**Lightgunner** is a proof of concept that turns a smartphone into a lightgun with **no extra apps** required.  
+**light-gunner** is a proof of concept that turns a smartphone into a lightgun with **no extra apps** required.  
 Only a modern mobile browser is needed.
 
 
