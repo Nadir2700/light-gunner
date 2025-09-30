@@ -6,7 +6,7 @@ Only a modern mobile browser is needed.
 
 ## Preview
 
-![Demo Preview](https://raw.githubusercontent.com/vadimcx/lightgunner/refs/heads/main/msc/imgs/lightgunner1.gif)
+![Demo Preview](https://raw.githubusercontent.com/vadimcx/light-gunner/refs/heads/main/msc/imgs/lightgunner1.gif)
 
 
 
